@@ -42,12 +42,32 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 const navItems = document.querySelectorAll("nav a");
-navItems[0].innerText = siteContent["nav"]["nav-item-1"]
-navItems[1].innerText = siteContent["nav"]["nav-item-2"]
-navItems[2].innerText = siteContent["nav"]["nav-item-3"]
-navItems[3].innerText = siteContent["nav"]["nav-item-4"]
-navItems[4].innerText = siteContent["nav"]["nav-item-5"]
-navItems[5].innerText = siteContent["nav"]["nav-item-6"]
+navItems[0].innerText = siteContent["nav"]["nav-item-1"];
+navItems[1].innerText = siteContent["nav"]["nav-item-2"];
+navItems[2].innerText = siteContent["nav"]["nav-item-3"];
+navItems[3].innerText = siteContent["nav"]["nav-item-4"];
+navItems[4].innerText = siteContent["nav"]["nav-item-5"];
+navItems[5].innerText = siteContent["nav"]["nav-item-6"];
+
+// Start of task 3
+const appendNode = document.createElement("a")
+const prependNode = document.createElement("a")
+appendNode.innerText = "New A Tag!"
+prependNode.innerText = "Using DOM!"
+const nav = document.querySelector("nav")
+nav.appendChild(appendNode)
+nav.prepend(prependNode)
+//different way to appendChild or prepend
+// document.getElementByName("nav").appendChild(lastNode)
+
+// navItems[0].style.color = "green";
+// navItems[1].style.color = "green";
+//More efficient way is with forEach
+const navItemsGreen = document.querySelectorAll('nav a')
+navItemsGreen.forEach(item => item.style.color = 'green')
+
+//End of Task 3
+
 
 const tagline = document.querySelectorAll("h1");
 tagline[0].innerText = siteContent["cta"]["h1"]
@@ -93,5 +113,6 @@ contactContent[0].textContent = siteContent["contact"]["address"];
 contactContent[1].textContent = siteContent["contact"]["phone"];
 contactContent[2].textContent = siteContent["contact"]["email"];
 
+//footer
 const footer = document.querySelector("footer p");
 footer.textContent = siteContent["footer"]["copyright"];
